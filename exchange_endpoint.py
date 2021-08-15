@@ -282,7 +282,7 @@ def trade():
         g.session.add(verified_order)
         g.session.commit()
         # 3a. Check if the order is backed by a transaction equal to the sell_amount (this is new)
-        if verified_order['sell_amount'] == verified_order['buy_amount']
+        if verified_order['sell_amount'] == verified_order['buy_amount']:
             return jsonify(True)
         # 3b. Fill the order (as in Exchange Server II) if the order is valid
         fill_order(verified_order)
